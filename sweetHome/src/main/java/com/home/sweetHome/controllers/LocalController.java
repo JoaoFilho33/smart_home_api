@@ -34,4 +34,6 @@ public class LocalController {
         return ResponseEntity.status(HttpStatus.OK).body(localRepository.findAll());
     }
 
+    
+
 }
