@@ -1,6 +1,5 @@
 package com.home.sweetHome.repositories;
 
-import com.home.sweetHome.dtos.DispositivoDto;
 import com.home.sweetHome.models.Dispositivo;
 import org.springframework.data.jpa.repository.JpaRepository;
 

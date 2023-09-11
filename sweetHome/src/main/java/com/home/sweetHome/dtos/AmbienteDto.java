@@ -2,12 +2,11 @@ package com.home.sweetHome.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+import java.util.UUID;
 
 public record AmbienteDto(
-        @NotBlank
-        Long id,
-        @NotBlank
         String descricao,
-        @NotNull
-        Long localId) {
+        UUID localId) {
 }

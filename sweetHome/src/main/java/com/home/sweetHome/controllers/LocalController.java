@@ -23,7 +23,7 @@ public class LocalController {
     LocalRepository localRepository;
 
     @PostMapping("/locais")
-    public ResponseEntity<Object> saveLocal(@RequestBody @Valid LocalDto localDto) {
+    public ResponseEntity<Object> saveLocal(@RequestBody LocalDto localDto) {
         var local = new Local();
         BeanUtils.copyProperties(localDto, local);
         return ResponseEntity.status(HttpStatus.CREATED).body(localRepository.save(local));
@@ -33,7 +33,4 @@ public class LocalController {
     public ResponseEntity<List<Local>> getAllLocais() {
         return ResponseEntity.status(HttpStatus.OK).body(localRepository.findAll());
     }
-
-    
-
 }

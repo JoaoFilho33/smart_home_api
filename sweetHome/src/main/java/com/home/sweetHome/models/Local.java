@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -14,11 +15,11 @@ import java.util.List;
 @Entity
 public class Local {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
     private String descricao;
 
-    @OneToMany(mappedBy = "local", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "local", cascade = CascadeType.ALL) //orphanRemoval = true
     private List<Ambiente> ambientes = new ArrayList<>();//cada local pode ter varios ambientes
 }
